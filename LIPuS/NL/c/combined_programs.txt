@@ -1,0 +1,811 @@
+// File: NL1.c
+int main(){
+  // variable declarations
+  int n,x,y,z,a;
+  // pre-conditions
+  assume(n==0);
+  assume(x==0);
+  assume(y==1);
+  assume(z==6);
+  assume(a>=n);
+  // loop body
+  while(n<=a){
+       //assert(z == 6*n + 6);
+       //assert(y == 3*n*n + 3*n + 1);
+       //assert(x == n*n*n);
+       //assert(n <= a+1);
+       //%%%traces: int a, int n, int x, int y, int z
+       n=n+1;
+       x=x+y;
+       y=y+z;
+       z=z+6;
+  }
+  // post-condition
+  assert( (n==a+1) && (y == 3*n*n + 3*n + 1) && (x == n*n*n) && (z == 6*n + 6));
+}
+
+// File: NL10.c
+int main(){
+     // variable declarations
+     int x, y, c, z, k;
+     // pre-conditions
+     assume(z>=0);
+     assume(z<=10);
+     assume(k>0);
+     assume(k<=10);
+     assume(x == 1);
+     assume(y == 1);
+     assume(c == 1);
+
+     // loop body
+     while (c < k){
+	  c = c + 1;
+	  x = x*z + 1;
+	  y = y*z;
+     }
+     // post-condition
+     assert(1+x*z-x-z*y==0);
+}
+
+
+
+// File: NL11.c
+
+
+int main(){
+     // variable declarations
+     int z,k,x,y,c,a;
+     // pre-conditions
+     assume(z>=0);
+     assume(z<=10);
+     assume(k > 0);
+     assume(k<=10);
+     assume(x == a);
+     assume(y == 1);
+     assume(c == 1);
+
+     // loop body
+     while (c < k){
+	  c = c + 1;
+	  x = x*z + a;
+	  y = y*z;
+     }
+
+     // post-condition
+     assert(z*x-x+a-a*z*y == 0);
+}
+
+
+
+// File: NL12.c
+
+int main(){
+     // variable declarations
+     int q,r,t,A,B;
+     //precondition
+     assume(q == 0);
+     assume(r == 0);
+     assume(t == A);
+     assume(A >= 0);
+     assume(B >= 1);
+	 // loop body
+     while(t != 0) {
+	  //assert(q*B + r + t == A);
+	  //assert(r < B && r >= 0);
+	  //%%%traces: int q, int r, int t, int A, int B
+	  if (r + 1 == B) {
+	       q = q + 1;
+	       r = 0;
+	       t = t - 1;
+	  }
+	  else {
+	       r = r + 1;
+	       t = t - 1;
+	  }
+     }
+     // post-condition
+     assert(q == A / B);
+     //return q;
+}
+
+
+// File: NL13.c
+
+int main(){
+     // variable declarations
+     int a,b,p,q,x,y;
+
+     //precondition
+     assume(x>=1);
+     assume(y>=1);
+     assume(a == x);
+     assume(b == y);
+     assume(p == 1);
+     assume(q == 0);
+
+	 // loop body
+     while(a!=0 && b!=0) {
+	  //assert(q+a*b*p==x*y);
+	  //%%%traces: int x, int y, int a, int b, int p, int q
+	  if (a % 2 ==0 && b % 2 ==0 ){
+	       a = a/2;
+	       b = b/2;
+	       p = 4*p;
+	  }
+	  else if (a % 2 ==1 && b % 2 ==0 ){
+	       a = a-1;
+	       q = q+b*p;
+	  }
+	  else if (a % 2 ==0 && b % 2 ==1 ){
+	       b = b-1;
+	       q = q+a*p;
+	  }
+	  else {
+	       a = a-1;
+	       b = b-1;
+	       q = q+(a+b+1)*p;
+	  }
+     }
+     // post-condition
+     assert(q == x*y);
+}
+
+
+// File: NL14.c
+
+int main(){
+     // variable declarations
+     int x,y,z,a,b;
+
+     //precondition
+     assume(a >= 0);
+     assume(b >= 0);
+     assume(x == a);
+     assume(y == b);
+     assume(z == 0);
+
+     // loop body
+     while(y!=0) {
+	  //assert(z+x*y==a*b);
+	  //%%%traces: int a, int b, int x, int y, int z
+	  
+	  if (y%2 ==1 ){
+	       z = z+x;
+	       y = y-1;
+	  }
+	  x = 2*x;
+	  y = y/2;
+     }
+
+     // post-condition
+     assert(z == a*b);
+}
+
+
+
+// File: NL15.c
+int main(){
+     // variable declarations
+     int k,y,x,c;
+     //precondition
+     assume(y == 0);
+     assume(x == 0);
+     assume(c == 0);
+     assume(k >= 0);
+     assume(k <= 30);
+
+     // loop body
+     while(c < k){
+      //assert(2 * x - y * y - y == 0);
+      //assert(c <= k);
+      //assert(y == c);
+	  //%%%traces: int x, int y, int k
+	  c = c + 1;
+	  y = y + 1;
+	  x = y + x;
+     }
+
+     // post-condition
+     assert(2 * x - k * k - k == 0);
+}
+
+
+
+
+// File: NL16.c
+int main(){
+     // variable declarations
+     int k,y,x,c;
+
+     //precondition
+     assume( k >= 0 );
+     assume( k <= 30 );
+     assume( y == 0 );
+     assume( x == 0 );
+     assume( c == 0 );
+
+
+     // loop body
+     while(c < k){
+	  //assert(6*x-2*y*y*y-3*y*y-y == 0);
+      //assert(c <= k);
+      //assert(c == y);
+	  //%%%traces: int x, int y, int k
+	  c = c + 1;
+	  y = y + 1;
+	  x = y * y + x;
+     }
+     // post-condition
+     assert(6*x-2*k*k*k-3*k*k-k == 0);
+}
+
+
+// File: NL17.c
+
+int main(){
+     // variable declarations
+     int k, y, x, c;
+
+     //precondition
+     assume( k>=0 );
+     assume( k<=30 );
+     assume( y == 0 );
+     assume( x == 0 );
+     assume( c == 0 );
+
+     // loop body
+     while(c < k){
+	  //assert(4*x-(y*y*y*y)-2*(y*y*y)-(y*y) == 0);
+      //assert(c <= k);
+      //assert(c == y);
+	  //%%%traces: int x, int y, int k
+	  c = c +1 ;
+	  y = y +1;
+	  x=y*y*y+x;
+     }
+     // post-condition
+     assert(4*x-(k*k*k*k)-2*(k*k*k)-(k*k) == 0);
+}
+
+
+
+// File: NL18.c
+int main(){
+     // variable declarations
+     int k,y,x,c;
+     //precondition
+     assume( k>= 0 );
+     assume( k <= 30 ); //if too large then will cause overflow
+     assume( y == 0 );
+     assume( x == 0 );
+     assume( c = 0 );
+
+     // loop body
+     while(c < k){
+	  //assert(6*y*y*y*y*y + 15*y*y*y*y+ 10*y*y*y - 30*x - y == 0);
+      //assert(c <= k);
+      //assert(c == y);
+	  //%%%traces: int x, int y, int k
+	  c = c +1 ;
+	  y = y +1;
+	  x = y*y*y*y+x;
+     }
+
+     // post-condition
+     assert(6*k*k*k*k*k + 15*k*k*k*k+ 10*k*k*k - 30*x - k == 0);
+}
+
+
+// File: NL19.c
+int main(){
+     // variable declarations
+     int k,y,x,c;
+
+     //precondition
+     assume( k>=0 );
+     assume( k<=30 ); //if too large then overflow
+     assume( y == 0);
+     assume( x == 0);
+     assume( c == 0);
+
+     // loop body
+     while(c < k){
+	  //assert(-2*pow(y,6) - 6*pow(y,5) - 5*pow(y,4) + pow(y,2) + 12*x == 0.0); //DIG Generated  (but don't uncomment, assertion will fail because of int overflow)	  
+      //assert(c <= k);
+      //%%%traces: int x, int y, int k
+	  c = c + 1 ;
+	  y = y + 1;
+	  x=y*y*y*y*y+x;
+     }
+
+     // post-condition
+     assert(-2*(k*k*k*k*k*k) - 6*(k*k*k*k*k) - 5*(k*k*k*k) + (k*k) + 12*x == 0);
+
+}
+
+// File: NL2.c
+int main(){
+    // variable declarations
+    int x,y,q,r;
+
+    //precondition
+    assume(x>0);
+    assume(y>0);
+    assume(q==0);
+    assume(r==0);
+    // loop body
+    while(x > y * q + r) {
+        if (r == y - 1){
+            r = 0;
+            q += 1;
+        }
+        else{
+            r += 1;
+        }
+
+    }
+    // post-condition
+    //assert(r == x % y);
+    assert(q == x / y);
+    //assert(x == q*y+r);
+}
+
+
+// File: NL20.c
+
+int main(){
+     // variable declarations
+     int n,a,s,t;
+
+     //precondition
+     assume(n >= 0);
+     assume(a==0);
+     assume(s==1);
+     assume(t==1);
+
+     // loop body
+     while(s <= n){
+	  //assert(t == 2*a + 1);
+	  //assert(s == (a + 1)*(a + 1));
+	  //the above 2 should be equiv to t^2 - 4*s + 2*t + 1 == 0
+      //assert(a*a <= n);
+	  
+	  //%%%traces: int a, int n, int t, int s
+	  a=a+1;
+	  t=t+2;
+	  s=s+t;
+     }
+
+     // post-condition
+     assert( n < (a + 1) * (a + 1));
+}
+
+
+// File: NL21.c
+int main() {
+	int x = 0;
+	int y = 0;
+
+	while(unknown()) {
+		y = y + 1;
+		x = y * y;
+	}
+
+	assert(x == y * y);
+	return 0;
+}
+
+
+// File: NL22.c
+int main() {
+	int x;
+	assume(x >= 0);
+	int y = x * x;
+
+	while(unknown()) {
+		x = x + 1;
+		y = y + 1;
+	}
+
+	assert(y <= x * x);
+	return 0;
+}
+
+
+
+
+// File: NL23.c
+int main() {
+	int x;
+	assume(x >= 0 && x <= 10);
+	int y = x * x;
+
+	while(x * x <= 1000) {
+		x = x + 1;
+		y = y + 1;
+	}
+
+	assert(y <= 1000);
+	return 0;
+}
+
+
+
+
+// File: NL24.c
+int main() {
+	int x;
+	int y;
+
+	assume(x >= 0 && y >= 0);
+
+	int z = x * y;
+
+	while(x > 0) {
+		x = x - 1;
+		z = z - y;
+	}
+
+	assert(z == 0);
+	return 0;
+}
+
+
+// File: NL25.c
+int main() {
+	int x, z, w;
+
+	z = w * x;
+
+	while(unknown())
+	{
+		w = w * x;
+		z = z * x;
+	}
+
+	assert(z == w * x);
+	return 0;
+}
+
+
+// File: NL26.c
+int main() {
+	int x, y, z, w;
+
+	assume(x == 1 && x <= y);
+	w = 1;
+	z = 1;
+
+	while(x <= y)
+	{
+		w = w * x;
+		if (x < y) {
+			z = z * x;
+		}
+		x += 1;
+	}
+
+	assert(w == z * y);
+	return 0;
+}
+
+
+// File: NL27.c
+int main() {
+	int x, y, z, w;
+
+	assume(x >= 0 && y >= x);
+
+	z = 0;
+	w = 0;
+
+	while(w < y) {
+		z += x;
+		w += 1;
+	}
+
+	assert(z == x * y);
+
+	return 0;
+}
+
+
+// File: NL28.c
+int main() {
+    // variable declarations
+	int x, y, z, w, p;
+
+    //precondition
+	assume(x >= 0 && y >= x);
+    assume(z == 0);
+    assume(w == 0);
+    assume(p == 0);
+    // loop body
+	while(w < y) {
+		z += x;
+		p += z;
+		w += 1;
+	}
+    // post-condition
+	assert(p == x * (1 + y) * y / 2);
+
+	return 0;
+}
+
+
+// File: NL29.c
+int main() {
+    // variable declarations
+	int x, y, z, w, p, q;
+
+    //precondition
+	assume(x >= 0 && y >= x);
+    assume(z == 0);
+    assume(w == 0);
+    assume(p == 0);
+    assume(q == 0);
+    // loop body
+	while(w < y) {
+		z += x;
+		p += z;
+		q += p;
+		w += 1;
+	}
+    // post-condition
+	assert(q == x * (2*y*y*y + 6*y*y + 4*y) / 12);
+
+	return 0;
+}
+
+
+// File: NL3.c
+int main(){
+    // variable declarations
+    int x,y,q,r;
+    //precondition
+    assume(x>0);
+    assume(y>0);
+    assume(q==0);
+    assume(r==0);
+    // loop body
+    while(x > y * q + r) {
+        if (r == y - 1){
+            r = 0;
+            q += 1;
+        }
+        else{
+            r += 1;
+        }
+    }
+    // post-condition
+    assert(r == x % y);
+    //assert(q == x / y);
+    //assert(x == q*y+r);
+}
+
+
+// File: NL30.c
+//Cauchy-Buniakowsky-Schwarz
+int main() {
+    // variable declarations
+	int x, y, z, w, p, n;
+
+    //precondition
+	assume(x >= 0);
+	assume(y >= 0);
+	assume(n >= 0);
+    assume(z == 0);
+    assume(w == 0);
+    assume(p == 0);
+    // loop body
+	while(n > 0) {
+		z = z + x * x;
+		w = w + y * y;
+		p = p + x * y;
+		n -= 1;
+	}
+    // post-condition
+	assert(z * w >= p * p);
+}
+
+
+// File: NL4.c
+int main(){
+    // variable declarations
+    int x, y;
+    int q, r;
+    //precondition
+    assume(x>0);
+    assume(y>0);
+    assume(q==0);
+    assume(r==0);
+    // loop body
+    while(x > y * q + r) {
+        if (r == y - 1){
+            r = 0;
+            q += 1;
+        }
+        r += 1;
+    }
+    // post-condition
+    //assert(r == x % y);
+    //assert(q == x / y);
+    assert(x == q*y+r);
+}
+
+
+// File: NL5.c
+
+int main(){
+    // variable declarations
+    int a,b,p,q,r,s;
+    int x, y;
+    //precondition
+    assume(x >= 1);
+    assume(y >= 1);
+    assume(a == x);
+    assume(b == y);
+    assume(p == 1);
+    assume(q == 0);
+    assume(r == 0);
+    assume(s == 1);
+
+    // loop body
+    while(a!=b){
+        if (a>b) {
+           a = a-b;
+           p = p-q;
+           r = r-s;
+        }
+        else {
+           b = b-a;
+           q = q-p;
+           s = s-r;
+        }
+    }
+    // post-condition
+    assert(1 == p*s - r*q);
+    //assert(a == y*r + x*p);
+    //assert(b == x*q + y*s);
+    //assert((r-s) * y == (q-p) * x)
+}
+
+
+
+// File: NL6.c
+
+int main(){
+    // variable declarations
+    int a,b,p,q,r,s;
+    int x, y;
+    //precondition
+    assume(x >= 1);
+    assume(y >= 1);
+    assume(a == x);
+    assume(b == y);
+    assume(p == 1);
+    assume(q == 0);
+    assume(r == 0);
+    assume(s == 1);
+
+    // loop body
+    while(a!=b){
+        //%%%traces: int x, int y, int a, int b, int p, int r, int q, int s
+        if (a>b) {
+           a = a-b;
+           p = p-q;
+           r = r-s;
+        }
+        else {
+           b = b-a;
+           q = q-p;
+           s = s-r;
+        }
+    }
+    // post-condition
+    assert(a == y*r + x*p);
+    //assert(b == x*q + y*s);
+    //assert((r-s) * y == (q-p) * x)
+}
+
+
+
+// File: NL7.c
+
+int main(){
+    // variable declarations
+    int a,b,p,q,r,s;
+    int x, y;
+    //precondition
+    assume(x >= 1);
+    assume(y >= 1);
+    assume(a == x);
+    assume(b == y);
+    assume(p == 1);
+    assume(q == 0);
+    assume(r == 0);
+    assume(s == 1);
+
+    // loop body
+    while(a!=b){
+        //%%%traces: int x, int y, int a, int b, int p, int r, int q, int s
+        if (a>b) {
+           a = a-b;
+           p = p-q;
+           r = r-s;
+        }
+        else {
+           b = b-a;
+           q = q-p;
+           s = s-r;
+        }
+    }
+
+    // post-condition
+    assert(b == x*q + y*s);
+    //assert((r-s) * y == (q-p) * x)
+}
+
+
+
+// File: NL8.c
+
+int main(){
+    // variable declarations
+    int a,b,p,q,r,s;
+    int x, y;
+    //precondition
+    assume(x >= 1);
+    assume(y >= 1);
+    assume(a == x);
+    assume(b == y);
+    assume(p == 1);
+    assume(q == 0);
+    assume(r == 0);
+    assume(s == 1);
+
+    // loop body
+    while(a!=b){
+        //%%%traces: int x, int y, int a, int b, int p, int r, int q, int s
+        if (a>b) {
+           a = a-b;
+           p = p-q;
+           r = r-s;
+        }
+        else {
+           b = b-a;
+           q = q-p;
+           s = s-r;
+        }
+    }
+
+    // post-condition
+    assert((r-s) * y == (q-p) * x);
+}
+
+
+
+// File: NL9.c
+int main(){
+     // variable declarations
+     int z, k, x, y, c;
+     //precondition
+     assume(z>=0);
+     assume(z<=10);
+     assume(k > 0);
+     assume(k<=10);
+     assume(x==1);
+     assume(y==z);
+     assume(c==1);
+
+     // loop body
+     while (c < k){
+	  c = c + 1;
+	  x = x*z + 1;
+	  y = y*z;
+     }
+     // post-condition
+     assert(x*z - x - y + 1 == 0);
+}
+
+

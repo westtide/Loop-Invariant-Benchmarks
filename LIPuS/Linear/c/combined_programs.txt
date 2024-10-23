@@ -1,0 +1,3353 @@
+// File: 1.c
+int main() {
+  // variable declarations
+  int x;
+  int y;
+  // pre-conditions
+  (x = 1);
+  (y = 0);
+  // loop body
+  while ((y < 100000)) {
+    {
+    (x  = (x + y));
+    (y  = (y + 1));
+    }
+
+  }
+  // post-condition
+assert( (x >= y) );
+}
+
+
+// File: 10.c
+int main() {
+  // variable declarations
+  int x;
+  int y;
+  // pre-conditions
+  assume((x >= 0));
+  assume((x <= 2));
+  assume((y <= 2));
+  assume((y >= 0));
+  // loop body
+  while (unknown()) {
+    {
+    (x  = (x + 2));
+    (y  = (y + 2));
+    }
+
+  }
+  // post-condition
+if ( (y == 0) )
+assert( (x != 4) );
+
+}
+
+
+// File: 100.c
+int main() {
+  // variable declarations
+  int n;
+  int x;
+  int y;
+  // pre-conditions
+  assume((n >= 0));
+  (x = n);
+  (y = 0);
+  // loop body
+  while ((x > 0)) {
+    {
+    (y  = (y + 1));
+    (x  = (x - 1));
+    }
+
+  }
+  // post-condition
+assert( (y == n) );
+}
+
+
+// File: 101.c
+int main() {
+  // variable declarations
+  int n;
+  int x;
+  // pre-conditions
+  (x = 0);
+  // loop body
+  while ((x < n)) {
+    {
+    (x  = (x + 1));
+    }
+
+  }
+  // post-condition
+if ( (x != n) )
+assert( (n < 0) );
+
+}
+
+
+// File: 102.c
+int main() {
+  // variable declarations
+  int n;
+  int x;
+  // pre-conditions
+  (x = 0);
+  // loop body
+  while ((x < n)) {
+    {
+    (x  = (x + 1));
+    }
+
+  }
+  // post-condition
+if ( (n >= 0) )
+assert( (x == n) );
+
+}
+
+
+// File: 103.c
+int main() {
+  // variable declarations
+  int x;
+  // pre-conditions
+  (x = 0);
+  // loop body
+  while ((x < 100)) {
+    {
+    (x  = (x + 1));
+    }
+
+  }
+  // post-condition
+assert( (x == 100) );
+}
+
+
+// File: 104.c
+int main() {
+  // variable declarations
+  int n;
+
+  int x;
+  // pre-conditions
+  (x = 0);
+  // loop body
+  while ((x < n)) {
+    {
+    (x  = (x + 1));
+    }
+
+  }
+  // post-condition
+if ( (x != n) )
+assert( (n < 0) );
+
+}
+
+
+// File: 105.c
+int main() {
+  // variable declarations
+  int n;
+  int x;
+  // pre-conditions
+  (x = 0);
+  // loop body
+  while ((x < n)) {
+    {
+    (x  = (x + 1));
+    }
+
+  }
+  // post-condition
+if ( (n >= 0) )
+assert( (x == n) );
+
+}
+
+
+// File: 106.c
+
+int main() {
+    int a,m,j,k;
+
+    assume(a <= m);
+    assume(j < 1);
+    k = 0;
+
+    while ( k < 1) {
+        if(m < a) {
+            m = a;
+        }
+        k = k + 1;
+    }
+    //post-condition
+    assert( a >= m);
+}
+
+
+// File: 107.c
+
+
+int main() {
+    int a,m,j,k;
+
+    j = 0;
+    k = 0;
+
+    while ( k < 1) {
+        if(m < a) {
+            m = a;
+        }
+        k = k + 1;
+    }
+
+    //post-condition
+    assert( a <= m);
+}
+
+
+// File: 108.c
+
+int main() {
+    int a,c,m,j,k;
+
+    assume(a <= m);
+    j = 0;
+    k = 0;
+
+    while ( k < c) {
+        if(m < a) {
+            m = a;
+        }
+        k = k + 1;
+    }
+
+    //post-condition
+    assert( a <=  m);
+}
+
+
+// File: 109.c
+
+int main() {
+    int a,c,m,j,k;
+
+    j = 0;
+    k = 0;
+
+    while ( k < c) {
+        if(m < a) {
+            m = a;
+        }
+        k = k + 1;
+    }
+
+    //post-condition
+    if( c > 0 ) {
+        assert( a <=  m);
+    }
+}
+
+
+// File: 11.c
+int main() {
+  // variable declarations
+  int x;
+  int y;
+
+  // pre-conditions
+  assume((x >= 0));
+  assume((x <= 10));
+  assume((y <= 10));
+  assume((y >= 0));
+  // loop body
+  while (unknown()) {
+    {
+    (x  = (x + 10));
+    (y  = (y + 10));
+    }
+
+  }
+  // post-condition
+if ( (x == 20) )
+assert( (y != 0) );
+
+}
+
+
+// File: 110.c
+int main() {
+  // variable declarations
+  int i;
+  int n;
+  int sn;
+  // pre-conditions
+  (sn = 0);
+  (i = 1);
+  assume(n >= 1);
+  // loop body
+  while ((i <= n)) {
+    {
+    (i  = (i + 1));
+    (sn  = (sn + 1));
+    }
+
+  }
+  // post-condition
+if ( (sn != n) )
+assert( (sn == 0) );
+
+}
+
+
+// File: 111.c
+int main() {
+  // variable declarations
+  int i;
+  int n;
+  int sn;
+  // pre-conditions
+  (sn = 0);
+  (i = 1);
+  assume(n >= 1);
+  // loop body
+  while ((i <= n)) {
+    {
+    (i  = (i + 1));
+    (sn  = (sn + 1));
+    }
+
+  }
+  // post-condition
+if ( (sn != 0) )
+assert( (sn == n) );
+
+}
+
+
+// File: 112.c
+int main() {
+  // variable declarations
+  int i;
+  int n;
+  int sn;
+  // pre-conditions
+  (sn = 0);
+  (i = 1);
+  assume(n >= 1);
+  // loop body
+  while ((i <= n)) {
+    {
+    (i  = (i + 1));
+    (sn  = (sn + 1));
+    }
+
+  }
+  // post-condition
+if ( (sn != n) )
+assert( (sn == 0) );
+
+}
+
+
+// File: 113.c
+int main() {
+  // variable declarations
+  int i;
+  int n;
+  int sn;
+
+  // pre-conditions
+  (sn = 0);
+  (i = 1);
+  assume(n >= 1);
+  // loop body
+  while ((i <= n)) {
+    {
+    (i  = (i + 1));
+    (sn  = (sn + 1));
+    }
+
+  }
+  // post-condition
+if ( (sn != 0) )
+assert( (sn == n) );
+
+}
+
+
+// File: 114.c
+int main() {
+  // variable declarations
+  int sn;
+  int x;
+  // pre-conditions
+  (sn = 0);
+  (x = 0);
+  // loop body
+  while (unknown()) {
+    {
+    (x  = (x + 1));
+    (sn  = (sn + 1));
+    }
+
+  }
+  // post-condition
+if ( (sn != x) )
+assert( (sn == -1) );
+
+}
+
+
+// File: 115.c
+int main() {
+  // variable declarations
+  int sn;
+  int x;
+  // pre-conditions
+  (sn = 0);
+  (x = 0);
+  // loop body
+  while (unknown()) {
+    {
+    (x  = (x + 1));
+    (sn  = (sn + 1));
+    }
+
+  }
+  // post-condition
+if ( (sn != -1) )
+assert( (sn == x) );
+
+}
+
+
+// File: 116.c
+int main() {
+  // variable declarations
+  int sn;
+  int x;
+  // pre-conditions
+  (sn = 0);
+  (x = 0);
+  // loop body
+  while (unknown()) {
+    {
+    (x  = (x + 1));
+    (sn  = (sn + 1));
+    }
+
+  }
+  // post-condition
+if ( (sn != x) )
+assert( (sn == -1) );
+
+}
+
+
+// File: 117.c
+int main() {
+  // variable declarations
+  int sn;
+  int x;
+  // pre-conditions
+  (sn = 0);
+  (x = 0);
+  // loop body
+  while (unknown()) {
+    {
+    (x  = (x + 1));
+    (sn  = (sn + 1));
+    }
+
+  }
+  // post-condition
+if ( (sn != -1) )
+assert( (sn == x) );
+
+}
+
+
+// File: 118.c
+int main() {
+  // variable declarations
+  int i;
+  int size;
+  int sn;
+  // pre-conditions
+  (sn = 0);
+  (i = 1);
+  assume(size >= 1);
+  // loop body
+  while ((i <= size)) {
+    {
+    (i  = (i + 1));
+    (sn  = (sn + 1));
+    }
+
+  }
+  // post-condition
+if ( (sn != size) )
+assert( (sn == 0) );
+
+}
+
+
+// File: 119.c
+int main() {
+  // variable declarations
+  int i;
+  int size;
+  int sn;
+  // pre-conditions
+  (sn = 0);
+  (i = 1);
+  assume(size >= 1);
+  // loop body
+  while ((i <= size)) {
+    {
+    (i  = (i + 1));
+    (sn  = (sn + 1));
+    }
+
+  }
+  // post-condition
+if ( (sn != 0) )
+assert( (sn == size) );
+
+}
+
+
+// File: 12.c
+int main() {
+  // variable declarations
+  int x;
+  int y;
+
+  // pre-conditions
+  assume((x >= 0));
+  assume((x <= 10));
+  assume((y <= 10));
+  assume((y >= 0));
+  // loop body
+  while (unknown()) {
+    {
+    (x  = (x + 10));
+    (y  = (y + 10));
+    }
+
+  }
+  // post-condition
+if ( (y == 0) )
+assert( (x != 20) );
+
+}
+
+pre x >= 0 /\ x <= 10 /\ y >= 0 /\ y <= 10
+
+post y = 0 => x != 20
+
+// File: 120.c
+int main() {
+  // variable declarations
+  int i;
+  int sn;
+  // pre-conditions
+  (sn = 0);
+  (i = 1);
+  // loop body
+  while ((i <= 8)) {
+    {
+    (i  = (i + 1));
+    (sn  = (sn + 1));
+    }
+
+  }
+  // post-condition
+if ( (sn != 8) )
+assert( (sn == 0) );
+
+}
+
+
+// File: 121.c
+int main() {
+  // variable declarations
+  int i;
+  int sn;
+  // pre-conditions
+  (sn = 0);
+  (i = 1);
+  // loop body
+  while ((i <= 8)) {
+    {
+    (i  = (i + 1));
+    (sn  = (sn + 1));
+    }
+
+  }
+  // post-condition
+if ( (sn != 0) )
+assert( (sn == 8) );
+
+}
+
+
+// File: 122.c
+int main() {
+  // variable declarations
+  int i;
+  int size;
+  int sn;
+  // pre-conditions
+  (sn = 0);
+  (i = 1);
+  assume(size >= 1);
+  // loop body
+  while ((i <= size)) {
+    {
+    (i  = (i + 1));
+    (sn  = (sn + 1));
+    }
+
+  }
+  // post-condition
+if ( (sn != size) )
+assert( (sn == 0) );
+
+}
+
+
+// File: 123.c
+int main() {
+  // variable declarations
+  int i;
+  int size;
+  int sn;
+  // pre-conditions
+  (sn = 0);
+  (i = 1);
+  assume(size >= 1);
+  // loop body
+  while ((i <= size)) {
+    {
+    (i  = (i + 1));
+    (sn  = (sn + 1));
+    }
+
+  }
+  // post-condition
+if ( (sn != 0) )
+assert( (sn == size) );
+
+}
+
+
+// File: 124.c
+int main() {
+  // variable declarations
+  int i;
+  int j;
+  int x;
+  int y;
+  // pre-conditions
+  (i = x);
+  (j = y);
+  // loop body
+  while ((x != 0)) {
+    {
+    (x  = (x - 1));
+    (y  = (y - 1));
+    }
+
+  }
+  // post-condition
+if ( (i == j) )
+assert( (y == 0) );
+
+}
+
+
+// File: 125.c
+int main() {
+  // variable declarations
+  int i;
+  int j;
+  int x;
+  int y;
+  // pre-conditions
+  (i = x);
+  (j = y);
+  // loop body
+  while ((x != 0)) {
+    {
+    (x  = (x - 1));
+    (y  = (y - 1));
+    }
+
+  }
+  // post-condition
+if ( (y != 0) )
+assert( (i != j) );
+
+}
+
+
+// File: 126.c
+int main() {
+  // variable declarations
+  int i;
+  int j;
+  int x;
+  int y;
+  // pre-conditions
+  (i = x);
+  (j = y);
+  // loop body
+  while ((x != 0)) {
+    {
+    (x  = (x - 1));
+    (y  = (y - 1));
+    }
+
+  }
+  // post-condition
+if ( (i == j) )
+assert( (y == 0) );
+
+}
+
+
+// File: 127.c
+int main() {
+  // variable declarations
+  int i;
+  int j;
+  int x;
+  int y;
+  // pre-conditions
+  (i = x);
+  (j = y);
+  // loop body
+  while ((x != 0)) {
+    {
+    (x  = (x - 1));
+    (y  = (y - 1));
+    }
+
+  }
+  // post-condition
+if ( (y != 0) )
+assert( (i != j) );
+
+}
+
+
+// File: 128.c
+int main() {
+  // variable declarations
+  int x;
+  int y;
+  // pre-conditions
+  (x = 1);
+  // loop body
+  while ((x < y)) {
+    {
+    (x  = (x + x));
+    }
+
+  }
+  // post-condition
+assert( (x >= 1) );
+}
+
+
+// File: 129.c
+int main() {
+  // variable declarations
+  int x;
+  int y;
+
+  // pre-conditions
+  (x = 1);
+  // loop body
+  while ((x < y)) {
+    {
+    (x  = (x + x));
+    }
+
+  }
+  // post-condition
+assert( (x >= 1) );
+}
+
+
+// File: 13.c
+int main() {
+  // variable declarations
+  int x;
+  int y;
+
+  // pre-conditions
+  assume((x >= 0));
+  assume((x <= 2));
+  assume((y <= 2));
+  assume((y >= 0));
+  // loop body
+  while (unknown()) {
+    {
+    (x  = (x + 2));
+    (y  = (y + 2));
+    }
+
+  }
+  // post-condition
+if ( (x == 4) )
+assert( (y != 0) );
+
+}
+
+
+// File: 130.c
+
+int main() {
+    int d1 = 1;
+    int d2 = 1;
+    int d3 = 1;
+    int x1 = 1;
+    int x2,x3;
+
+    while( x1 > 0) {
+        if(x2 > 0) {
+            if(x3 > 0) {
+                x1 = x1 - d1;
+                x2 = x2 - d2;
+                x3 = x3 - d3;
+            }
+        }
+    }
+
+    assert (x2 >= 0);
+    //assert (x3 >= 0);
+}
+
+
+// File: 131.c
+
+int main() {
+    int d1 = 1;
+    int d2 = 1;
+    int d3 = 1;
+    int x1 = 1;
+    int x2,x3;
+
+    while( x1 > 0) {
+        if(x2 > 0) {
+            if(x3 > 0) {
+                x1 = x1 - d1;
+                x2 = x2 - d2;
+                x3 = x3 - d3;
+            }
+        }
+    }
+
+    //assert (x2 >= 0);
+    assert (x3 >= 0);
+}
+
+
+// File: 132.c
+
+int main() {
+    int i = 0;
+    int j, c, t;
+
+    while( unknown() ) {
+        if(c > 48) {
+            if (c < 57) {
+                j = i + i;
+                t = c - 48;
+                i = j + t;
+            }
+        }
+    } 
+
+    //post-condition
+    assert (i >= 0);
+}
+
+
+// File: 133.c
+int main() {
+  // variable declarations
+  int n;
+  int x;
+  // pre-conditions
+  (x = 0);
+  assume((n >= 0));
+  // loop body
+  while ((x < n)) {
+    {
+    (x  = (x + 1));
+    }
+
+  }
+  // post-condition
+assert( (x == n) );
+}
+
+
+// File: 14.c
+int main() {
+  // variable declarations
+  int x;
+  int y;
+
+  // pre-conditions
+  assume((x >= 0));
+  assume((x <= 2));
+  assume((y <= 2));
+  assume((y >= 0));
+  // loop body
+  while (unknown()) {
+    {
+    (x  = (x + 2));
+    (y  = (y + 2));
+    }
+
+  }
+  // post-condition
+if ( (y == 0) )
+assert( (x != 4) );
+
+}
+
+
+// File: 15.c
+
+
+int main()
+{
+    int x = 0;
+    int m = 0;
+    int n;
+
+    while (x < n) {
+        if (unknown()) {
+            m = x;
+        }
+        x = x + 1;
+    }
+
+    //post-condition
+    if(n > 0) {
+       assert (m < n);
+       //assert (m >= 0);
+    }
+}
+
+
+// File: 16.c
+
+
+int main()
+{
+    int x = 0;
+    int m = 0;
+    int n;
+
+    while (x < n) {
+        if (unknown()) {
+            m = x;
+        }
+        x = x + 1;
+    }
+
+    //post-condition
+    if(n > 0) {
+       //assert (m < n);
+       assert (m >= 0);
+    }
+}
+
+
+// File: 17.c
+
+int main()
+{
+    int x = 1;
+    int m = 1;
+    int n;
+
+    while (x < n) {
+        if (unknown()) {
+            m = x;
+        }
+        x = x + 1;
+    }
+
+    //post-condition
+    if(n > 1) {
+       assert (m < n);
+       //assert (m >= 1);
+    }
+}
+
+
+// File: 18.c
+
+int main()
+{
+    int x = 1;
+    int m = 1;
+    int n;
+
+    while (x < n) {
+        if (unknown()) {
+            m = x;
+        }
+        x = x + 1;
+    }
+
+    //post-condition
+    if(n > 1) {
+       //assert (m < n);
+       assert (m >= 1);
+    }
+}
+
+
+// File: 19.c
+
+
+int main()
+{
+    int x = 0;
+    int m = 0;
+    int n;
+
+    while (x < n) {
+        if (unknown()) {
+            m = x;
+        }
+        x = x + 1;
+    }
+
+    //post-condition
+    if(n > 0) {
+       assert (m < n);
+       //assert (m >= 0);
+    }
+}
+
+
+// File: 2.c
+int main() {
+  // variable declarations
+  int x;
+  int y;
+  // pre-conditions
+  (x = 1);
+  (y = 0);
+  // loop body
+  while ((y < 1000)) {
+    {
+    (x  = (x + y));
+    (y  = (y + 1));
+    }
+
+  }
+  // post-condition
+assert( (x >= y) );
+}
+
+
+// File: 20.c
+
+
+int main()
+{
+    int x = 0;
+    int m = 0;
+    int n;
+
+    while (x < n) {
+        if (unknown()) {
+            m = x;
+        }
+        x = x + 1;
+    }
+
+    //post-condition
+    if(n > 0) {
+       //assert (m < n);
+       assert (m >= 0);
+    }
+}
+
+
+// File: 21.c
+
+int main()
+{
+    int x = 1;
+    int m = 1;
+    int n;
+
+    while (x < n) {
+        if (unknown()) {
+            m = x;
+        }
+        x = x + 1;
+    }
+
+    //post-condition
+    if(n > 1) {
+       assert (m < n);
+       //assert (m >= 1);
+    }
+}
+
+
+// File: 22.c
+
+int main()
+{
+    int x = 1;
+    int m = 1;
+    int n;
+
+    while (x < n) {
+        if (unknown()) {
+            m = x;
+        }
+        x = x + 1;
+    }
+
+    //post-condition
+    if(n > 1) {
+       //assert (m < n);
+       assert (m >= 1);
+    }
+}
+
+
+// File: 23.c
+int main() {
+  // variable declarations
+  int i;
+  int j;
+  // pre-conditions
+  (i = 1);
+  (j = 20);
+  // loop body
+  while ((j >= i)) {
+    {
+    (i  = (i + 2));
+    (j  = (j - 1));
+    }
+
+  }
+  // post-condition
+assert( (j == 13) );
+}
+
+
+// File: 24.c
+int main() {
+  // variable declarations
+  int i;
+  int j;
+  // pre-conditions
+  (i = 1);
+  (j = 10);
+  // loop body
+  while ((j >= i)) {
+    {
+    (i  = (i + 2));
+    (j  = (j - 1));
+    }
+
+  }
+  // post-condition
+assert( (j == 6) );
+}
+
+
+// File: 25.c
+int main() {
+  // variable declarations
+  int x;
+  // pre-conditions
+  (x = 10000);
+  // loop body
+  while ((x > 0)) {
+    {
+    (x  = (x - 1));
+    }
+
+  }
+  // post-condition
+assert( (x == 0) );
+}
+
+
+// File: 26.c
+int main() {
+  // variable declarations
+  int n;
+  int x;
+  // pre-conditions
+  (x = n);
+  // loop body
+  while ((x > 1)) {
+    {
+    (x  = (x - 1));
+    }
+
+  }
+  // post-condition
+if ( (x != 1) )
+assert( (n < 0) );
+
+}
+
+
+// File: 27.c
+int main() {
+  // variable declarations
+  int n;
+  int x;
+  // pre-conditions
+  (x = n);
+  // loop body
+  while ((x > 1)) {
+    {
+    (x  = (x - 1));
+    }
+
+  }
+  // post-condition
+if ( (n >= 0) )
+assert( (x == 1) );
+
+}
+
+
+// File: 28.c
+int main() {
+  // variable declarations
+  int n;
+  int x;
+  // pre-conditions
+  (x = n);
+  // loop body
+  while ((x > 0)) {
+    {
+    (x  = (x - 1));
+    }
+
+  }
+  // post-condition
+if ( (x != 0) )
+assert( (n < 0) );
+
+}
+
+
+// File: 29.c
+int main() {
+  // variable declarations
+  int n;
+  int x;
+  // pre-conditions
+  (x = n);
+  // loop body
+  while ((x > 0)) {
+    {
+    (x  = (x - 1));
+    }
+
+  }
+  // post-condition
+if ( (n >= 0) )
+assert( (x == 0) );
+
+}
+
+
+// File: 3.c
+
+int main()
+{
+    int x = 0;
+    int y, z;
+
+    while(x < 5) {
+       x += 1;
+       if( z <= y) {
+          y = z;
+       }
+    }
+
+    //post-condition
+    assert (z >= y);
+}
+
+
+// File: 30.c
+int main() {
+  // variable declarations
+  int x;
+  // pre-conditions
+  (x = 100);
+  // loop body
+  while ((x > 0)) {
+    {
+    (x  = (x - 1));
+    }
+
+  }
+  // post-condition
+  assert( (x == 0) );
+}
+
+
+// File: 31.c
+int main() {
+  // variable declarations
+  int n;
+  int x;
+  // pre-conditions
+  (x = n);
+  // loop body
+  while ((x > 1)) {
+    {
+    (x  = (x - 1));
+    }
+
+  }
+  // post-condition
+if ( (x != 1) )
+assert( (n < 0) );
+
+}
+
+
+// File: 32.c
+int main() {
+  // variable declarations
+  int n;
+
+  int x;
+  // pre-conditions
+  (x = n);
+  // loop body
+  while ((x > 1)) {
+    {
+    (x  = (x - 1));
+    }
+
+  }
+  // post-condition
+if ( (n >= 0) )
+assert( (x == 1) );
+
+}
+
+
+// File: 33.c
+int main() {
+  // variable declarations
+  int n;
+
+  int x;
+  // pre-conditions
+  (x = n);
+  // loop body
+  while ((x > 0)) {
+    {
+    (x  = (x - 1));
+    }
+
+  }
+  // post-condition
+if ( (x != 0) )
+assert( (n < 0) );
+
+}
+
+
+// File: 34.c
+int main() {
+  // variable declarations
+  int n;
+
+  int x;
+  // pre-conditions
+  (x = n);
+  // loop body
+  while ((x > 0)) {
+    {
+    (x  = (x - 1));
+    }
+
+  }
+  // post-condition
+if ( (n >= 0) )
+assert( (x == 0) );
+
+}
+
+
+// File: 35.c
+int main() {
+  // variable declarations
+  int c;
+  // pre-conditions
+  (c = 0);
+  // loop body
+  while (unknown()) {
+    {
+      if ( unknown() ) {
+        if ( (c != 40) )
+        {
+        (c  = (c + 1));
+        }
+      } else {
+        if ( (c == 40) )
+        {
+        (c  = 1);
+        }
+      }
+
+    }
+
+  }
+  // post-condition
+if ( (c != 40) )
+assert( (c >= 0) );
+}
+
+
+// File: 36.c
+int main() {
+  // variable declarations
+  int c;
+  // pre-conditions
+  (c = 0);
+  // loop body
+  while (unknown()) {
+    {
+      if ( unknown() ) {
+        if ( (c != 40) )
+        {
+        (c  = (c + 1));
+        }
+      } else {
+        if ( (c == 40) )
+        {
+        (c  = 1);
+        }
+      }
+
+    }
+
+  }
+  // post-condition
+if ( (c != 40) )
+assert( (c <= 40) );
+}
+
+
+// File: 37.c
+int main() {
+  // variable declarations
+  int c;
+  // pre-conditions
+  (c = 0);
+  // loop body
+  while (unknown()) {
+    {
+      if ( unknown() ) {
+        if ( (c != 40) )
+        {
+        (c  = (c + 1));
+        }
+      } else {
+        if ( (c == 40) )
+        {
+        (c  = 1);
+        }
+      }
+
+    }
+
+  }
+  // post-condition
+if ( (c < 0) )
+if ( (c > 40) )
+assert( (c == 40) );
+
+}
+
+
+// File: 38.c
+
+int main() {
+    int n;
+    int c = 0;
+    assume (n > 0);
+
+    while (unknown()) {
+        if(c == n) {
+            c = 1;
+        }
+        else {
+            c = c + 1;
+        }
+    }
+
+    //post-condition
+    if(c == n) {
+        assert( c >= 0);
+        //assert( c <= n);
+    }
+}
+
+
+// File: 39.c
+
+int main() {
+    int n;
+    int c = 0;
+    assume (n > 0);
+
+    while (unknown()) {
+        if(c == n) {
+            c = 1;
+        }
+        else {
+            c = c + 1;
+        }
+    }
+
+    //post-condition
+    if(c == n) {
+        //assert( c >= 0);
+        assert( c <= n);
+    }
+}
+
+
+// File: 4.c
+int main()
+{
+    int x = 0;
+    int y, z;
+
+    while(x < 500) {
+       x += 1;
+       if( z <= y) {
+          y = z;
+       }
+    }
+
+    //post-condition
+    assert (z >= y);
+}
+
+
+// File: 40.c
+int main() {
+  // variable declarations
+  int c;
+  int n;
+  // pre-conditions
+  (c = 0);
+  assume((n > 0));
+  // loop body
+  while (unknown()) {
+    {
+      if ( unknown() ) {
+        if ( (c > n) )
+        {
+        (c  = (c + 1));
+        }
+      } else {
+        if ( (c == n) )
+        {
+        (c  = 1);
+        }
+      }
+
+    }
+
+  }
+  // post-condition
+if ( (c != n) )
+assert( (c >= 0) );
+}
+
+
+// File: 41.c
+int main() {
+  // variable declarations
+  int c;
+  int n;
+  // pre-conditions
+  (c = 0);
+  assume((n > 0));
+  // loop body
+  while (unknown()) {
+    {
+      if ( unknown() ) {
+        if ( (c > n) )
+        {
+        (c  = (c + 1));
+        }
+      } else {
+        if ( (c == n) )
+        {
+        (c  = 1);
+        }
+      }
+
+    }
+
+  }
+  // post-condition
+if ( (c != n) )
+assert( (c <= n) );
+}
+
+
+// File: 42.c
+int main() {
+  // variable declarations
+  int c;
+  int n;
+  // pre-conditions
+  (c = 0);
+  assume((n > 0));
+  // loop body
+  while (unknown()) {
+    {
+      if ( unknown() ) {
+        if ( (c > n) )
+        {
+        (c  = (c + 1));
+        }
+      } else {
+        if ( (c == n) )
+        {
+        (c  = 1);
+        }
+      }
+
+    }
+
+  }
+  // post-condition
+if ( (c < 0) )
+if ( (c > n) )
+assert( (c == n) );
+
+}
+
+
+// File: 43.c
+int main() {
+  // variable declarations
+  int c;
+  int n;
+  // pre-conditions
+  (c = 0);
+  assume((n > 0));
+  // loop body
+  while (unknown()) {
+    {
+      if ( unknown() ) {
+        if ( (c > n) )
+        {
+        (c  = (c + 1));
+        }
+      } else {
+        if ( (c == n) )
+        {
+        (c  = 1);
+        }
+      }
+
+    }
+
+  }
+  // post-condition
+if ( (c == n) )
+assert( (n > -1) );
+
+}
+
+
+// File: 44.c
+int main() {
+  // variable declarations
+  int c;
+  int n;
+  // pre-conditions
+  (c = 0);
+  assume((n > 0));
+  // loop body
+  while (unknown()) {
+    {
+      if ( unknown() ) {
+        if ( (c > n) )
+        {
+        (c  = (c + 1));
+        }
+      } else {
+        if ( (c == n) )
+        {
+        (c  = 1);
+        }
+      }
+
+    }
+
+  }
+  // post-condition
+if ( (n <= -1) )
+assert( (c != n) );
+
+}
+
+
+// File: 45.c
+int main() {
+  // variable declarations
+  int c;
+  int n;
+  // pre-conditions
+  (c = 0);
+  assume((n > 0));
+  // loop body
+  while (unknown()) {
+    {
+      if ( unknown() ) {
+        if ( (c != n) )
+        {
+        (c  = (c + 1));
+        }
+      } else {
+        if ( (c == n) )
+        {
+        (c  = 1);
+        }
+      }
+
+    }
+
+  }
+  // post-condition
+if ( (c != n) )
+assert( (c >= 0) );
+}
+
+
+// File: 46.c
+int main() {
+  // variable declarations
+  int c;
+  int n;
+  // pre-conditions
+  (c = 0);
+  assume((n > 0));
+  // loop body
+  while (unknown()) {
+    {
+      if ( unknown() ) {
+        if ( (c != n) )
+        {
+        (c  = (c + 1));
+        }
+      } else {
+        if ( (c == n) )
+        {
+        (c  = 1);
+        }
+      }
+
+    }
+
+  }
+  // post-condition
+if ( (c != n) )
+assert( (c <= n) );
+}
+
+
+// File: 47.c
+int main() {
+  // variable declarations
+  int c;
+  int n;
+  // pre-conditions
+  (c = 0);
+  assume((n > 0));
+  // loop body
+  while (unknown()) {
+    {
+      if ( unknown() ) {
+        if ( (c != n) )
+        {
+        (c  = (c + 1));
+        }
+      } else {
+        if ( (c == n) )
+        {
+        (c  = 1);
+        }
+      }
+
+    }
+
+  }
+  // post-condition
+if ( (c < 0) )
+if ( (c > n) )
+assert( (c == n) );
+
+}
+
+
+// File: 48.c
+int main() {
+  // variable declarations
+  int c;
+  int n;
+  // pre-conditions
+  (c = 0);
+  assume((n > 0));
+  // loop body
+  while (unknown()) {
+    {
+      if ( unknown() ) {
+        if ( (c != n) )
+        {
+        (c  = (c + 1));
+        }
+      } else {
+        if ( (c == n) )
+        {
+        (c  = 1);
+        }
+      }
+
+    }
+
+  }
+  // post-condition
+if ( (c == n) )
+assert( (n > -1) );
+
+}
+
+
+// File: 49.c
+int main() {
+  // variable declarations
+  int c;
+  int n;
+  // pre-conditions
+  (c = 0);
+  assume((n > 0));
+  // loop body
+  while (unknown()) {
+    {
+      if ( unknown() ) {
+        if ( (c != n) )
+        {
+        (c  = (c + 1));
+        }
+      } else {
+        if ( (c == n) )
+        {
+        (c  = 1);
+        }
+      }
+
+    }
+
+  }
+  // post-condition
+if ( (n <= -1) )
+assert( (c != n) );
+
+}
+
+
+// File: 5.c
+int main()
+{
+    int x = 0;
+    int size;
+    int y, z;
+
+    while(x < size) {
+       x += 1;
+       if( z <= y) {
+          y = z;
+       }
+    }
+
+    //post-condition
+    if(size > 0) {
+       assert (z >= y);
+    }
+}
+
+
+// File: 50.c
+int main() {
+  // variable declarations
+  int c;
+  // pre-conditions
+  (c = 0);
+  // loop body
+  while (unknown()) {
+    {
+      if ( unknown() ) {
+        if ( (c != 4) )
+        {
+        (c  = (c + 1));
+        }
+      } else {
+        if ( (c == 4) )
+        {
+        (c  = 1);
+        }
+      }
+
+    }
+
+  }
+  // post-condition
+if ( (c != 4) )
+assert( (c >= 0) );
+}
+
+
+// File: 51.c
+int main() {
+  // variable declarations
+  int c;
+  // pre-conditions
+  (c = 0);
+  // loop body
+  while (unknown()) {
+    {
+      if ( unknown() ) {
+        if ( (c != 4) )
+        {
+        (c  = (c + 1));
+        }
+      } else {
+        if ( (c == 4) )
+        {
+        (c  = 1);
+        }
+      }
+
+    }
+
+  }
+  // post-condition
+if ( (c != 4) )
+assert( (c <= 4) );
+}
+
+
+// File: 52.c
+int main() {
+  // variable declarations
+  int c;
+  // pre-conditions
+  (c = 0);
+  // loop body
+  while (unknown()) {
+    {
+      if ( unknown() ) {
+        if ( (c != 4) )
+        {
+        (c  = (c + 1));
+        }
+      } else {
+        if ( (c == 4) )
+        {
+        (c  = 1);
+        }
+      }
+
+    }
+
+  }
+  // post-condition
+if ( (c < 0) )
+if ( (c > 4) )
+assert( (c == 4) );
+
+}
+
+
+// File: 53.c
+int main() {
+  // variable declarations
+  int c;
+  int n;
+
+  // pre-conditions
+  (c = 0);
+  assume((n > 0));
+  // loop body
+  while (unknown()) {
+    {
+      if ( unknown() ) {
+        if ( (c > n) )
+        {
+        (c  = (c + 1));
+        }
+      } else {
+        if ( (c == n) )
+        {
+        (c  = 1);
+        }
+      }
+
+    }
+
+  }
+  // post-condition
+if ( (c != n) )
+assert( (c >= 0) );
+}
+
+
+// File: 54.c
+int main() {
+  // variable declarations
+  int c;
+  int n;
+  // pre-conditions
+  (c = 0);
+  assume((n > 0));
+  // loop body
+  while (unknown()) {
+    {
+      if ( unknown() ) {
+        if ( (c > n) )
+        {
+        (c  = (c + 1));
+        }
+      } else {
+        if ( (c == n) )
+        {
+        (c  = 1);
+        }
+      }
+
+    }
+
+  }
+  // post-condition
+if ( (c != n) )
+assert( (c <= n) );
+}
+
+
+// File: 55.c
+int main() {
+  // variable declarations
+  int c;
+  int n;
+
+  // pre-conditions
+  (c = 0);
+  assume((n > 0));
+  // loop body
+  while (unknown()) {
+    {
+      if ( unknown() ) {
+        if ( (c > n) )
+        {
+        (c  = (c + 1));
+        }
+      } else {
+        if ( (c == n) )
+        {
+        (c  = 1);
+        }
+      }
+
+    }
+
+  }
+  // post-condition
+if ( (c < 0) )
+if ( (c > n) )
+assert( (c == n) );
+
+}
+
+
+// File: 56.c
+int main() {
+  // variable declarations
+  int c;
+  int n;
+
+  // pre-conditions
+  (c = 0);
+  assume((n > 0));
+  // loop body
+  while (unknown()) {
+    {
+      if ( unknown() ) {
+        if ( (c > n) )
+        {
+        (c  = (c + 1));
+        }
+      } else {
+        if ( (c == n) )
+        {
+        (c  = 1);
+        }
+      }
+
+    }
+
+  }
+  // post-condition
+if ( (c == n) )
+assert( (n <= -1) );
+
+}
+
+
+// File: 57.c
+int main() {
+  // variable declarations
+  int c;
+  int n;
+
+  // pre-conditions
+  (c = 0);
+  assume((n > 0));
+  // loop body
+  while (unknown()) {
+    {
+      if ( unknown() ) {
+        if ( (c > n) )
+        {
+        (c  = (c + 1));
+        }
+      } else {
+        if ( (c == n) )
+        {
+        (c  = 1);
+        }
+      }
+
+    }
+
+  }
+  // post-condition
+if ( (n > -1) )
+assert( (c != n) );
+
+}
+
+
+// File: 58.c
+int main() {
+  // variable declarations
+  int c;
+  int n;
+  // pre-conditions
+  (c = 0);
+  assume((n > 0));
+  // loop body
+  while (unknown()) {
+    {
+      if ( unknown() ) {
+        if ( (c != n) )
+        {
+        (c  = (c + 1));
+        }
+      } else {
+        if ( (c == n) )
+        {
+        (c  = 1);
+        }
+      }
+
+    }
+
+  }
+  // post-condition
+if ( (c != n) )
+assert( (c >= 0) );
+}
+
+
+// File: 59.c
+int main() {
+  // variable declarations
+  int c;
+  int n;
+  // pre-conditions
+  (c = 0);
+  assume((n > 0));
+  // loop body
+  while (unknown()) {
+    {
+      if ( unknown() ) {
+        if ( (c != n) )
+        {
+        (c  = (c + 1));
+        }
+      } else {
+        if ( (c == n) )
+        {
+        (c  = 1);
+        }
+      }
+
+    }
+
+  }
+  // post-condition
+if ( (c != n) )
+assert( (c <= n) );
+}
+
+
+// File: 6.c
+
+int main()
+{
+    int x = 0;
+    int size;
+    int y, z;
+
+    while(x < size) {
+       x += 1;
+       if( z <= y) {
+          y = z;
+       }
+    }
+
+    //post-condition
+    if(size > 0) {
+       assert (z >= y);
+    }
+}
+
+
+// File: 60.c
+int main() {
+  // variable declarations
+  int c;
+  int n;
+  // pre-conditions
+  (c = 0);
+  assume((n > 0));
+  // loop body
+  while (unknown()) {
+    {
+      if ( unknown() ) {
+        if ( (c != n) )
+        {
+        (c  = (c + 1));
+        }
+      } else {
+        if ( (c == n) )
+        {
+        (c  = 1);
+        }
+      }
+
+    }
+
+  }
+  // post-condition
+if ( (c < 0) )
+if ( (c > n) )
+assert( (c == n) );
+
+}
+
+
+// File: 61.c
+int main() {
+  // variable declarations
+  int c;
+  int n;
+
+  // pre-conditions
+  (c = 0);
+  assume((n > 0));
+  // loop body
+  while (unknown()) {
+    {
+      if ( unknown() ) {
+        if ( (c != n) )
+        {
+        (c  = (c + 1));
+        }
+      } else {
+        if ( (c == n) )
+        {
+        (c  = 1);
+        }
+      }
+
+    }
+
+  }
+  // post-condition
+if ( (c == n) )
+assert( (n <= -1) );
+
+}
+
+
+// File: 62.c
+int main() {
+  // variable declarations
+  int c;
+  int n;
+
+  // pre-conditions
+  (c = 0);
+  assume((n > 0));
+  // loop body
+  while (unknown()) {
+    {
+      if ( unknown() ) {
+        if ( (c != n) )
+        {
+        (c  = (c + 1));
+        }
+      } else {
+        if ( (c == n) )
+        {
+        (c  = 1);
+        }
+      }
+
+    }
+
+  }
+  // post-condition
+if ( (n > -1) )
+assert( (c != n) );
+
+}
+
+
+// File: 63.c
+
+int main() {
+    int x = 1;
+    int y;
+
+    while (x <= 10) {
+        y = 10 - x;
+        x = x +1;
+    }
+
+    //post-condition
+    assert (y >= 0);
+    //assert (y < 10);
+}
+
+
+// File: 64.c
+
+int main() {
+    int x = 1;
+    int y;
+
+    while (x <= 10) {
+        y = 10 - x;
+        x = x +1;
+    }
+
+    //post-condition
+    //assert (y >= 0);
+    assert (y < 10);
+}
+
+
+// File: 65.c
+
+int main() {
+    int x = 1;
+    int y;
+
+    while (x <= 100) {
+        y = 100 - x;
+        x = x +1;
+    }
+
+    //post-condition
+    assert (y >= 0);
+    //assert (y < 100);
+}
+
+
+// File: 66.c
+
+int main() {
+    int x = 1;
+    int y;
+
+    while (x <= 100) {
+        y = 100 - x;
+        x = x +1;
+    }
+
+    //post-condition
+    //assert (y >= 0);
+    assert (y < 100);
+}
+
+
+// File: 67.c
+
+int main() {
+    int n,y;
+    int x = 1;
+
+    while (x <= n) {
+        y = n - x;
+        x = x +1;
+    }
+
+    //post-condition
+    if (n > 0) {
+        assert (y >= 0);
+        //assert (y <= n);
+    }
+}
+
+
+// File: 68.c
+
+int main() {
+    int n,y;
+    int x = 1;
+
+    while (x <= n) {
+        y = n - x;
+        x = x +1;
+    }
+
+    //post-condition
+    if (n > 0) {
+        //assert (y >= 0);
+        assert (y <= n);
+    }
+}
+
+
+// File: 69.c
+
+
+int main() {
+    int n;
+    int x = 1;
+    int y;
+
+    while (x <= n) {
+        y = n - x;
+        x = x +1;
+    }
+
+    //post-condition
+    if (n > 0) {
+      assert (y >= 0);
+      //assert (y < n);
+    }
+}
+
+
+// File: 7.c
+int main() {
+  // variable declarations
+  int x;
+  int y;
+  // pre-conditions
+  assume((x >= 0));
+  assume((x <= 10));
+  assume((y <= 10));
+  assume((y >= 0));
+  // loop body
+  while (unknown()) {
+    {
+    (x  = (x + 10));
+    (y  = (y + 10));
+    }
+
+  }
+  // post-condition
+if ( (x == 20) )
+assert( (y != 0) );
+
+}
+
+
+// File: 70.c
+
+
+int main() {
+    int n;
+    int x = 1;
+    int y;
+
+    while (x <= n) {
+        y = n - x;
+        x = x +1;
+    }
+
+    //post-condition
+    if (n > 0) {
+      //assert (y >= 0);
+      assert (y < n);
+    }
+}
+
+
+// File: 71.c
+int main() {
+  // variable declarations
+  int c;
+  int y;
+  int z;
+  // pre-conditions
+  (c = 0);
+  assume((y >= 0));
+  assume((y >= 127));
+  (z = (36 * y));
+  // loop body
+  while (unknown()) {
+    if ( (c < 36) )
+    {
+    (z  = (z + 1));
+    (c  = (c + 1));
+    }
+
+  }
+  // post-condition
+if ( (c < 36) )
+assert( (z >= 0) );
+}
+
+
+// File: 72.c
+int main() {
+  // variable declarations
+  int c;
+  int y;
+  int z;
+  // pre-conditions
+  (c = 0);
+  assume((y >= 0));
+  assume((y >= 127));
+  (z = (36 * y));
+  // loop body
+  while (unknown()) {
+    if ( (c < 36) )
+    {
+    (z  = (z + 1));
+    (c  = (c + 1));
+    }
+
+  }
+  // post-condition
+if ( (c < 36) )
+assert( (z < 4608) );
+}
+
+
+// File: 73.c
+int main() {
+  // variable declarations
+  int c;
+  int y;
+  int z;
+  // pre-conditions
+  (c = 0);
+  assume((y >= 0));
+  assume((y >= 127));
+  (z = (36 * y));
+  // loop body
+  while (unknown()) {
+    if ( (c < 36) )
+    {
+    (z  = (z + 1));
+    (c  = (c + 1));
+    }
+
+  }
+  // post-condition
+if ( (z < 0) )
+if ( (z >= 4608) )
+assert( (c >= 36) );
+
+}
+
+
+// File: 74.c
+int main() {
+  // variable declarations
+  int c;
+  int y;
+  int z;
+  // pre-conditions
+  (c = 0);
+  assume((y >= 0));
+  assume((y >= 127));
+  (z = (36 * y));
+  // loop body
+  while (unknown()) {
+    if ( (c < 36) )
+    {
+    (z  = (z + 1));
+    (c  = (c + 1));
+    }
+
+  }
+  // post-condition
+if ( (c < 36) )
+assert( (z >= 0) );
+}
+
+
+// File: 75.c
+int main() {
+  // variable declarations
+  int c;
+
+  int y;
+  int z;
+  // pre-conditions
+  (c = 0);
+  assume((y >= 0));
+  assume((y >= 127));
+  (z = (36 * y));
+  // loop body
+  while (unknown()) {
+    if ( (c < 36) )
+    {
+    (z  = (z + 1));
+    (c  = (c + 1));
+    }
+
+  }
+  // post-condition
+if ( (c < 36) )
+assert( (z < 4608) );
+}
+
+
+// File: 76.c
+int main() {
+  // variable declarations
+  int c;
+
+  int y;
+  int z;
+  // pre-conditions
+  (c = 0);
+  assume((y >= 0));
+  assume((y >= 127));
+  (z = (36 * y));
+  // loop body
+  while (unknown()) {
+    if ( (c < 36) )
+    {
+    (z  = (z + 1));
+    (c  = (c + 1));
+    }
+
+  }
+  // post-condition
+if ( (z < 0) )
+if ( (z >= 4608) )
+assert( (c >= 36) );
+
+}
+
+
+// File: 77.c
+int main() {
+  // variable declarations
+  int i;
+  int x;
+  int y;
+  // pre-conditions
+  (i = 0);
+  assume((x >= 0));
+  assume((y >= 0));
+  assume((x >= y));
+  // loop body
+  while (unknown()) {
+    if ( (i < y) )
+    {
+    (i  = (i + 1));
+    }
+
+  }
+  // post-condition
+if ( (i < y) )
+assert( (i < x) );
+}
+
+
+// File: 78.c
+int main() {
+  // variable declarations
+  int i;
+  int x;
+  int y;
+  // pre-conditions
+  (i = 0);
+  assume((x >= 0));
+  assume((y >= 0));
+  assume((x >= y));
+  // loop body
+  while (unknown()) {
+    if ( (i < y) )
+    {
+    (i  = (i + 1));
+    }
+
+  }
+  // post-condition
+if ( (i < y) )
+assert( (0 <= i) );
+}
+
+
+// File: 79.c
+int main() {
+  // variable declarations
+  int i;
+  int x;
+  int y;
+  // pre-conditions
+  (i = 0);
+  assume((x >= 0));
+  assume((y >= 0));
+  assume((x >= y));
+  // loop body
+  while (unknown()) {
+    if ( (i < y) )
+    {
+    (i  = (i + 1));
+    }
+
+  }
+  // post-condition
+if ( (i >= x) )
+if ( (0 > i) )
+assert( (i >= y) );
+
+}
+
+
+// File: 8.c
+int main() {
+  // variable declarations
+  int x;
+  int y;
+  // pre-conditions
+  assume((x >= 0));
+  assume((x <= 10));
+  assume((y <= 10));
+  assume((y >= 0));
+  // loop body
+  while (unknown()) {
+    {
+    (x  = (x + 10));
+    (y  = (y + 10));
+    }
+
+  }
+  // post-condition
+if ( (y == 0) )
+assert( (x != 20) );
+
+}
+
+
+// File: 80.c
+int main() {
+  // variable declarations
+  int i;
+  int x;
+  int y;
+
+  // pre-conditions
+  (i = 0);
+  assume((x >= 0));
+  assume((y >= 0));
+  assume((x >= y));
+  // loop body
+  while (unknown()) {
+    if ( (i < y) )
+    {
+    (i  = (i + 1));
+    }
+
+  }
+  // post-condition
+if ( (i < y) )
+assert( (i < x) );
+}
+
+
+// File: 81.c
+int main() {
+  // variable declarations
+  int i;
+  int x;
+  int y;
+
+  // pre-conditions
+  (i = 0);
+  assume((x >= 0));
+  assume((y >= 0));
+  assume((x >= y));
+  // loop body
+  while (unknown()) {
+    if ( (i < y) )
+    {
+    (i  = (i + 1));
+    }
+
+  }
+  // post-condition
+if ( (i < y) )
+assert( (0 <= i) );
+}
+
+
+// File: 82.c
+int main() {
+  // variable declarations
+  int i;
+  int x;
+  int y;
+  // pre-conditions
+  (i = 0);
+  assume((x >= 0));
+  assume((y >= 0));
+  assume((x >= y));
+  // loop body
+  while (unknown()) {
+    if ( (i < y) )
+    {
+    (i  = (i + 1));
+    }
+
+  }
+  // post-condition
+if ( (i >= x) )
+if ( (0 > i) )
+assert( (i >= y) );
+
+}
+
+
+// File: 83.c
+int main() {
+  // variable declarations
+  int x;
+  int y;
+  // pre-conditions
+  (x = -5000);
+  // loop body
+  while ((x < 0)) {
+    {
+    (x  = (x + y));
+    (y  = (y + 1));
+    }
+
+  }
+  // post-condition
+assert( (y > 0) );
+}
+
+
+// File: 84.c
+int main() {
+  // variable declarations
+  int x;
+  int y;
+  // pre-conditions
+  (x = -50);
+  // loop body
+  while ((x < 0)) {
+    {
+    (x  = (x + y));
+    (y  = (y + 1));
+    }
+
+  }
+  // post-condition
+assert( (y > 0) );
+}
+
+
+// File: 85.c
+int main() {
+  // variable declarations
+  int x;
+  int y;
+
+  // pre-conditions
+  (x = -15000);
+  // loop body
+  while ((x < 0)) {
+    {
+    (x  = (x + y));
+    (y  = (y + 1));
+    }
+
+  }
+  // post-condition
+assert( (y > 0) );
+}
+
+
+// File: 86.c
+int main() {
+  // variable declarations
+  int x;
+  int y;
+
+  // pre-conditions
+  (x = -50);
+  // loop body
+  while ((x < 0)) {
+    {
+    (x  = (x + y));
+    (y  = (y + 1));
+    }
+
+  }
+  // post-condition
+assert( (y > 0) );
+}
+
+
+// File: 87.c
+int main() {
+  // variable declarations
+  int lock;
+  int x;
+  int y;
+  // pre-conditions
+  (x = y);
+  (lock = 1);
+  // loop body
+  while ((x != y)) {
+    {
+      if ( unknown() ) {
+        {
+        (lock  = 1);
+        (x  = y);
+        }
+      } else {
+        {
+        (lock  = 0);
+        (x  = y);
+        (y  = (y + 1));
+        }
+      }
+
+    }
+
+  }
+  // post-condition
+assert( (lock == 1) );
+}
+
+
+// File: 88.c
+int main() {
+  // variable declarations
+  int lock;
+  int x;
+  int y;
+  // pre-conditions
+  (y = (x + 1));
+  (lock = 0);
+  // loop body
+  while ((x != y)) {
+    {
+      if ( unknown() ) {
+        {
+        (lock  = 1);
+        (x  = y);
+        }
+      } else {
+        {
+        (lock  = 0);
+        (x  = y);
+        (y  = (y + 1));
+        }
+      }
+
+    }
+
+  }
+  // post-condition
+assert( (lock == 1) );
+}
+
+
+// File: 89.c
+int main() {
+  // variable declarations
+  int lock;
+  int x;
+  int y;
+  // pre-conditions
+  (x = y);
+  (lock = 1);
+  // loop body
+  while ((x != y)) {
+    {
+      if ( unknown() ) {
+        {
+        (lock  = 1);
+        (x  = y);
+        }
+      } else {
+        {
+        (lock  = 0);
+        (x  = y);
+        (y  = (y + 1));
+        }
+      }
+
+    }
+
+  }
+  // post-condition
+assert( (lock == 1) );
+}
+
+
+// File: 9.c
+int main() {
+  // variable declarations
+  int x;
+  int y;
+  // pre-conditions
+  assume((x >= 0));
+  assume((x <= 2));
+  assume((y <= 2));
+  assume((y >= 0));
+  // loop body
+  while (unknown()) {
+    {
+    (x  = (x + 2));
+    (y  = (y + 2));
+    }
+
+  }
+  // post-condition
+if ( (x == 4) )
+assert( (y != 0) );
+
+}
+
+
+// File: 90.c
+int main() {
+  // variable declarations
+  int lock;
+  int x;
+  int y;
+  // pre-conditions
+  (y = (x + 1));
+  (lock = 0);
+  // loop body
+  while ((x != y)) {
+    {
+      if ( unknown() ) {
+        {
+        (lock  = 1);
+        (x  = y);
+        }
+      } else {
+        {
+        (lock  = 0);
+        (x  = y);
+        (y  = (y + 1));
+        }
+      }
+
+    }
+
+  }
+  // post-condition
+assert( (lock == 1) );
+}
+
+
+// File: 91.c
+
+int main(){
+
+    int x = 0;
+    int y = 0;
+
+    while(y >= 0){
+        y = y + x;
+    }
+
+    //post-condition
+    assert( y >= 0);
+}
+
+
+// File: 92.c
+
+
+int main(){
+
+    int x = 0;
+    int y = 0;
+
+    while(y >= 0){
+        y = y + x;
+    }
+
+    //post-condition
+    assert( y >= 0);
+}
+
+
+// File: 93.c
+int main() {
+  // variable declarations
+  int i;
+  int n;
+  int x;
+  int y;
+  // pre-conditions
+  assume((n >= 0));
+  (i = 0);
+  (x = 0);
+  (y = 0);
+  // loop body
+  while ((i < n)) {
+    {
+    (i  = (i + 1));
+      if ( unknown() ) {
+        {
+        (x  = (x + 1));
+        (y  = (y + 2));
+        }
+      } else {
+        {
+        (x  = (x + 2));
+        (y  = (y + 1));
+        }
+      }
+
+    }
+
+  }
+  // post-condition
+assert( ((3 * n) == (x + y)) );
+}
+
+
+// File: 94.c
+int main() {
+  // variable declarations
+  int i;
+  int j;
+  int k;
+  int n;
+  // pre-conditions
+  assume((k >= 0));
+  assume((n >= 0));
+  (i = 0);
+  (j = 0);
+  // loop body
+  while ((i <= n)) {
+    {
+    (i  = (i + 1));
+    (j  = (j + i));
+    }
+
+  }
+  // post-condition
+assert( ((i + (j + k)) > (2 * n)) );
+}
+
+
+// File: 95.c
+int main() {
+  // variable declarations
+  int i;
+  int j;
+  int x;
+  int y;
+  // pre-conditions
+  (j = 0);
+  (i = 0);
+  (y = 1);
+  // loop body
+  while ((i <= x)) {
+    {
+    (i  = (i + 1));
+    (j  = (j + y));
+    }
+
+  }
+  // post-condition
+if ( (y == 1) )
+assert( (i == j) );
+
+}
+
+
+// File: 96.c
+int main() {
+  // variable declarations
+  int i;
+  int j;
+  int x;
+  int y;
+  // pre-conditions
+  (j = 0);
+  (i = 0);
+  (y = 1);
+  // loop body
+  while ((i <= x)) {
+    {
+    (i  = (i + 1));
+    (j  = (j + y));
+    }
+
+  }
+  // post-condition
+if ( (i != j) )
+assert( (y != 1) );
+
+}
+
+
+// File: 97.c
+int main() {
+  // variable declarations
+  int i;
+  int j;
+  int x;
+  int y;
+  // pre-conditions
+  (j = 0);
+  (i = 0);
+  (y = 2);
+  // loop body
+  while ((i <= x)) {
+    {
+    (i  = (i + 1));
+    (j  = (j + y));
+    }
+
+  }
+  // post-condition
+if ( (y == 1) )
+assert( (i == j) );
+
+}
+
+
+// File: 98.c
+int main() {
+  // variable declarations
+  int i;
+  int j;
+  int x;
+  int y;
+  // pre-conditions
+  (j = 0);
+  (i = 0);
+  (y = 2);
+  // loop body
+  while ((i <= x)) {
+    {
+    (i  = (i + 1));
+    (j  = (j + y));
+    }
+
+  }
+  // post-condition
+if ( (i != j) )
+assert( (y != 1) );
+
+}
+
+
+// File: 99.c
+int main() {
+  // variable declarations
+  int n;
+  int x;
+  int y;
+  // pre-conditions
+  assume((n >= 0));
+  (x = n);
+  (y = 0);
+  // loop body
+  while ((x > 0)) {
+    {
+    (y  = (y + 1));
+    (x  = (x - 1));
+    }
+
+  }
+  // post-condition
+assert( (n == (x + y)) );
+}
+
+
+// File: test.c
+int main()
+{
+  unsigned int n;
+  assume(n >= 0);
+  int x=n, y=0;
+  while(x>0)
+  {
+    x--;
+    y++;
+  }
+  assert(y==n);
+}
+
+
